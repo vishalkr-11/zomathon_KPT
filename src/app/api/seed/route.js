@@ -1,9 +1,4 @@
-// src/app/api/seed/route.js
-// POST /api/seed  → clears + repopulates DB with realistic demo data
-// GET  /api/seed  → just inserts without clearing (safe for repeated calls)
-//
-// Run this ONCE after setting up MongoDB to have data to show in the dashboard.
-// In production you'd remove this route entirely.
+
 
 import { NextResponse } from 'next/server'
 import connectDB from '@/lib/mongodb'
