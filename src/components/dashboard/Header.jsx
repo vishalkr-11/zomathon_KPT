@@ -1,5 +1,4 @@
-// src/components/dashboard/Header.jsx
-// Standalone header component (alternative to PageShell for custom layouts)
+
 'use client'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'

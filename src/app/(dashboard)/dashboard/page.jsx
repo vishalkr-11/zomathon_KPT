@@ -1,4 +1,3 @@
-// src/app/(dashboard)/dashboard/page.jsx
 'use client'
 import { useState } from 'react'
 import { toast } from 'sonner'

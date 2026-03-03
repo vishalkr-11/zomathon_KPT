@@ -1,4 +1,3 @@
-// src/components/dashboard/KPTChart.jsx
 'use client'
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts'
 

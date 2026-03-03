@@ -1,6 +1,3 @@
-// src/app/(dashboard)/signals/page.jsx
-// Signal Quality — architecture explainer + live health bars
-// This is the "how it works" page for judges
 
 'use client'
 import { useRush }    from '@/hooks/useRush'

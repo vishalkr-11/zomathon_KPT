@@ -1,10 +1,8 @@
-// src/app/api/rush/activate/route.js
 import { NextResponse } from 'next/server'
 import connectDB from '@/lib/mongodb'
 import RushEvent from '@/models/RushEvent'
 import KptSignal from '@/models/KptSignal'
 
-// This function handles POST /api/rush/activate
 export async function POST(request) {
   try {
    

@@ -1,4 +1,3 @@
-// src/app/api/rush/deactivate/route.js
 import { NextResponse } from 'next/server'
 
 export async function POST() {

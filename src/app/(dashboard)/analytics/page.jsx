@@ -1,4 +1,3 @@
-// src/app/(dashboard)/analytics/page.jsx — KPT Analytics
 'use client'
 import { useState } from 'react'
 import { PageShell } from '@/components/dashboard/PageShell'

@@ -21,8 +21,7 @@ export function useOrders() {
   const [loading, setLoading] = useState(false)
   const [error,   setError]   = useState(null)
 
-  // Track which orders the merchant has manually marked ready
-  // so polling never reverts them back
+  
   const markedReadyRef = useRef(new Set())
 
   const fetchOrders = useCallback(async () => {
@@ -31,7 +30,6 @@ export function useOrders() {
       if (!res.ok) throw new Error()
       const data = await res.json()
       if (data.orders?.length > 0) {
-        // Apply any local overrides before setting state
         const merged = data.orders.map(o =>
           markedReadyRef.current.has(o.orderId)
             ? { ...o, status: 'ready' }
@@ -40,13 +38,11 @@ export function useOrders() {
         setOrders(merged)
       }
     } catch {
-      // Keep current state — don't reset to mock on poll failure
     } finally {
       setLoading(false)
     }
   }, [])
 
-  // Tick elapsed time every 30s
   useEffect(() => {
     const timer = setInterval(() => {
       setOrders(prev => prev.map(o =>
@@ -58,7 +54,6 @@ export function useOrders() {
     return () => clearInterval(timer)
   }, [])
 
-  // Poll every 15s
   useEffect(() => {
     fetchOrders()
     const poll = setInterval(fetchOrders, 15000)
